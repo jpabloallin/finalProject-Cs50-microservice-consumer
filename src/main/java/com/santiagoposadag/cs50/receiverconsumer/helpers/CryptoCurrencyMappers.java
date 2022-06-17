@@ -107,6 +107,7 @@ public class CryptoCurrencyMappers {
     public Function<ClientDto, Client> fromClientDTOToEntity(){
         return dto -> {
             var client = new Client();
+            client.setId(dto.getId());
             client.setPassport(dto.getPassport());
             client.setName(dto.getName());
             client.setPhone(dto.getPhone());
@@ -118,6 +119,7 @@ public class CryptoCurrencyMappers {
     public Function<Client, ClientDto> fromEntityToDTO(){
         return entity -> {
             var dto = new ClientDto();
+            dto.setId(entity.getId());
             dto.setPassport(entity.getPassport());
             dto.setName(entity.getName());
             dto.setPhone(entity.getPhone());
