@@ -15,7 +15,6 @@ public class ReceiveFromClientCreateQueueUseCase {
     }
 
     public void receiveMessage(String message){
-        System.out.println(message);
         Client client = gson.fromJson(message, Client.class);
         repository.save(client).subscribe();
     }
